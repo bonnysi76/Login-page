@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #6d5dfc, #4ca1ff);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 900px;
+  height: 550px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, #4ca1ff, #6d5dfc);
+  z-index: 1;
+  transition: 0.6s ease-in-out;
+}
+
+.overlay-panel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.overlay-panel h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.overlay-panel p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.overlay-panel .ghost-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.ghost-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Forms */
+.form-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.6s ease-in-out;
+}
+
+.form {
+  width: 80%;
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #6d5dfc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #4ca1ff;
+}
+
+.toggle-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.toggle-link span {
+  font-weight: bold;
+  color: #6d5dfc;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.toggle-link span:hover {
+  color: #4ca1ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container.sign-up-mode .overlay {
+  left: 0;
+}
+
+.container.sign-up-mode .form-container {
+  transform: translateX(100%);
+}
